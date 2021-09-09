@@ -44,3 +44,16 @@ class DB_factory:
 
     def get_session(self):
         return self.session()
+
+if __name__ == "__main__":
+    user = Users(
+        id = 2,
+        first_name = "Spiros",
+        last_name = "Morfonios",
+        age = 41,
+        IP = "0.0.0.0"
+    )
+    db = DB_factory()
+    db_session = db.get_session()
+    db_session.add(user)
+    db_session.commit()
